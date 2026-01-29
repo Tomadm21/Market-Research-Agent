@@ -1,0 +1,29 @@
+# Google ADK Multi-Agent Market Research System
+# Backend Dependencies - Pinned for reproducibility
+
+# Core AI
+google-genai==1.60.0
+
+# Web Framework
+fastapi==0.123.10
+uvicorn==0.40.0
+pydantic==2.11.10
+
+# Configuration
+python-dotenv==1.1.1
+
+# Web Scraping & Search
+requests==2.32.5
+beautifulsoup4==4.13.5
+lxml==5.1.0
+tavily-python==0.5.0
+
+# Monitoring
+prometheus-client==0.21.0
+
+# Testing (dev dependencies)
+pytest==8.3.5
+pytest-cov==6.0.0
+pytest-asyncio==0.25.0
+httpx==0.28.1
+ruff==0.9.6
