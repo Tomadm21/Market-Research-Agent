@@ -1,3 +1,4 @@
+
 # Market Analyst AI
 
 An autonomous multi-agent research system powered by Google Gemini. Enter a market or topic to generate comprehensive research reports with real-time web data.
@@ -294,3 +295,4 @@ MIT
 ---
 
 *Powered by Google Gemini and Brave Search*
+
