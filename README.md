@@ -1,35 +1,20 @@
 <div align="center">
 
 # 🔬 Market Analyst AI
-
 ### Autonomes Multi-Agenten Research System
 
-*Gib ein Thema ein → Erhalte einen professionellen Research-Report mit Echtzeit-Webdaten*
+*Professionelle Marktforschung in Echtzeit – angetrieben durch eine koordinierte 4-Agenten-Pipeline*
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yourusername/market-analyst-ai/releases)
-[![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/)
-[![Next.js](https://img.shields.io/badge/next.js-14-black.svg)](https://nextjs.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-009688.svg)](https://fastapi.tiangolo.com/)
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/yourusername/market-analyst-ai)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
+[![Next.js](https://img.shields.io/badge/next.js-15-black.svg)](https://nextjs.org/)
 
-<!-- Uncomment when you have CI/CD setup -->
-<!-- [![CI/CD](https://github.com/yourusername/market-analyst-ai/workflows/CI/badge.svg)](https://github.com/yourusername/market-analyst-ai/actions) -->
-<!-- [![codecov](https://codecov.io/gh/yourusername/market-analyst-ai/branch/main/graph/badge.svg)](https://codecov.io/gh/yourusername/market-analyst-ai) -->
-
-[🚀 Demo](https://market-analyst-demo.vercel.app) • [📖 Dokumentation](./docs/1.%20Project%20Overview.md) • [🐛 Issues](https://github.com/yourusername/market-analyst-ai/issues) • [💬 Discussions](https://github.com/yourusername/market-analyst-ai/discussions)
+[🚀 Live Demo](https://market-analyst-demo.vercel.app) • [📖 Architektur-Doku](./docs/2.%20Architecture%20Overview.md) • [💼 Business Case](./docs/1.%20Project%20Overview.md)
 
 ---
 
-<!-- Uncomment when you have screenshots ready -->
-<!-- ![Demo Screenshot](docs/assets/demo-screenshot.png) -->
-
-### Schnell-Deploy
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyourusername%2Fmarket-analyst-ai&env=GOOGLE_API_KEY,BRAVE_SEARCH_API_KEY&envDescription=API%20Keys%20required%20for%20the%20application&envLink=https%3A%2F%2Fgithub.com%2Fyourusername%2Fmarket-analyst-ai%23configuration)
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/market-analyst-ai)
-
-<!-- ![Demo GIF](docs/assets/demo.gif) -->
+<video src="assets/CASESTUDY-2.mp4" controls width="100%" poster="assets/architecture-diagram.png"></video>
 
 </div>
 
@@ -155,7 +140,7 @@ flowchart TD
 ### Real-time Progress Tracking
 Verfolge jeden Agenten live – von der ersten Strategieplanung bis zum fertigen Report.
 
-<!-- ![Progress Demo](docs/assets/progress-tracking.gif) -->
+<video src="assets/CASESTUDY-2.mp4" controls width="100%"></video>
 
 **Features:**
 - 🔴 Live Status Updates
@@ -530,49 +515,20 @@ Production-ready Health Endpoint für Monitoring & Load Balancers.
 ## 📁 Projekt-Struktur
 
 ```
-google-adk-agent/
-│
-├── 🐍 backend/                     # FastAPI Server & Agenten
-│   ├── simple_agent.py            # 🎯 Main Server + Orchestrator
-│   ├── llm_client.py              # 🤖 Gemini API Integration
-│   ├── config.py                  # ⚙️  Configuration Manager
-│   │
-│   ├── tools/                     # 🛠️  Agent Tools
-│   │   ├── search.py             # 🔍 Brave Search API
-│   │   └── fetch.py              # 📄 Document Fetcher
-│   │
-│   ├── tests/                     # 🧪 Pytest Suite
-│   ├── Dockerfile                 # 🐳 Container Image
-│   ├── requirements.txt           # 📦 Python Dependencies
-│   └── .env.example               # 🔑 Environment Template
-│
-├── ⚛️  frontend/                   # Next.js App
-│   ├── src/
-│   │   ├── app/                   # 📱 Next.js App Router
-│   │   │   ├── page.tsx          # 🏠 Main Research Page
-│   │   │   ├── layout.tsx        # 🎨 Root Layout
-│   │   │   └── globals.css       # 💅 Global Styles
-│   │   │
-│   │   ├── components/            # 🧩 React Components
-│   │   │   ├── ResearchDashboard.tsx   # 📊 Main Dashboard
-│   │   │   ├── ResearchInput.tsx       # ✍️  Topic Input
-│   │   │   ├── ReportViewer.tsx        # 📄 Report Display
-│   │   │   └── ErrorBoundary.tsx       # 🚨 Error Handler
-│   │   │
-│   │   ├── hooks/
-│   │   │   └── useResearch.ts    # 🔄 SSE Client Logic
-│   │   │
-│   │   └── types/
-│   │       └── research.ts       # 📘 TypeScript Types
-│   │
-│   ├── Dockerfile                 # 🐳 Container Image
-│   └── package.json               # 📦 Node Dependencies
-│
-├── 🔄 .github/workflows/
-│   └── ci.yml                     # ✅ CI/CD Pipeline
-│
-├── 🐳 docker-compose.yml          # Full Stack Deployment
-└── 📖 README.md                   # Diese Datei
+.
+├── .github/workflows/          # ✅ CI/CD Pipeline
+├── assets/                      # 🎥 Medien & Diagramme
+├── backend/                     # 🐍 FastAPI Server (Modular)
+│   ├── core/                   # 🎯 Orchestration & State
+│   ├── tools/                  # 🛠️  Research Tools
+│   ├── tests/                  # 🧪 Testing Suite
+│   ├── main.py                 # 🚀 Server Entry Point
+│   └── app.py                  # ⚙️  App Configuration
+├── docs/                        # 📖 Dokumentation
+├── frontend/                    # ⚛️  Next.js App
+├── docker-compose.yml           # 🐳 Deployment
+├── run.sh                       # ⚡ Bootstrap & Run Script
+└── README.md                    # 📑 Diese Datei
 ```
 
 ---

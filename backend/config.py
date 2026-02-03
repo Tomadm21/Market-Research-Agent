@@ -91,9 +91,6 @@ class Config:
     def get_cors_config(cls) -> dict:
         """
         Get CORS configuration dictionary.
-
-        Returns:
-            dict: CORS configuration for FastAPI CORSMiddleware.
         """
         return {
             "allow_origins": cls.ALLOWED_ORIGINS,
@@ -102,19 +99,8 @@ class Config:
             "allow_headers": cls.ALLOWED_HEADERS,
         }
 
+# Internal initialization check
+if not Config.GOOGLE_API_KEY:
+    import logging
+    logging.getLogger("market_analyst_agent").warning("GOOGLE_API_KEY not set in environment.")
 
-# Validate configuration on module import
-try:
-    Config.validate()
-    print(f"✓ Configuration loaded successfully")
-    print(f"  Environment: {Config.ENVIRONMENT}")
-    print(f"  Port: {Config.PORT}")
-    print(f"  Allowed Origins: {', '.join(Config.ALLOWED_ORIGINS)}")
-    print(f"  Model: {Config.GEMINI_MODEL}")
-except ValueError as e:
-    print(f"✗ Configuration Error:\n{e}")
-    if not Config.is_development():
-        # In production, fail fast
-        raise
-    else:
-        print("\nRunning in development mode - some features may not work without proper configuration.")
